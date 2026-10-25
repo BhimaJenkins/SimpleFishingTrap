@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SimpleFishingTrap</AssemblyName>
+    <RootNamespace>SimpleFishingTrap</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Version>0.1.0</Version>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- The UnityEditor folder is for Unity, not this build. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);UnityEditor\**</DefaultItemExcludes>
+
+    <!-- Point these at your install (same as KeenCombat / SmolCraft). -->
+    <ValheimDir Condition="'$(ValheimDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</ValheimDir>
+    <BepInExDir Condition="'$(BepInExDir)' == ''">$(ValheimDir)\BepInEx</BepInExDir>
+    <ManagedDir>$(ValheimDir)\valheim_Data\Managed</ManagedDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExDir)\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(ManagedDir)\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_utils"><HintPath>$(ManagedDir)\assembly_utils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(ManagedDir)\UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+  <!-- Copies the DLL and everything in Assets\ (model, textures, icon) into BepInEx\plugins\SimpleFishingTrap. -->
+  <ItemGroup>
+    <ModAssets Include="Assets\*.obj;Assets\*.png" />
+    <ModAssets Include="Assets\simplefishingtrap" Condition="Exists('Assets\simplefishingtrap')" />
+  </ItemGroup>
+  <Target Name="CopyToPlugins" AfterTargets="Build" Condition="Exists('$(BepInExDir)\plugins')">
+    <MakeDir Directories="$(BepInExDir)\plugins\SimpleFishingTrap" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BepInExDir)\plugins\SimpleFishingTrap" />
+    <Copy SourceFiles="@(ModAssets)" DestinationFolder="$(BepInExDir)\plugins\SimpleFishingTrap" />
+  </Target>
+
+</Project>

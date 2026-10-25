@@ -1,0 +1,9 @@
+{
+  "name": "SimpleFishingTrap",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/BhimaJenkins/SimpleFishingTrap",
+  "description": "A buildable trap that slowly catches Raw Fish next to water. Holds 10, empty it to keep it catching. Configurable, server-synced.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333"
+  ]
+}

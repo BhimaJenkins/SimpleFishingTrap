@@ -1,0 +1,9 @@
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\bin\Debug\SimpleFishingTrap.dll
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\bin\Debug\SimpleFishingTrap.pdb
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.csproj.AssemblyReference.cache
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.AssemblyInfoInputs.cache
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.AssemblyInfo.cs
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.csproj.CoreCompileInputs.cache
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.dll
+C:\Users\pfort\Documents\SimpleFishingTrap\SimpleFishingTrap\obj\Debug\SimpleFishingTrap.pdb
